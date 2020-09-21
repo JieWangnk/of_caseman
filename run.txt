@@ -1,0 +1,23 @@
+#!/bin/sh
+cd ${0%/*} || exit 1
+
+python ./mergestl.py
+python ./blockMesh.py  ./constant/triSurface/aorta_merged.stl 5 1.003
+
+runApplication foamCleanPolyMesh
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+
+runApplication decomposePar
+
+runParallel icoFoam
+
+runApplication reconstructPar -allRegions
+
+
+echo
+echo "creating files for paraview post-processing"
+echo
+paraFoam -touchAll
+
+# -----------------------------------------------------------------

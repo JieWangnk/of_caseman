@@ -16,7 +16,7 @@ FoamFile
 
 surfaces ("wall_aorta.stl" "inlet.stl" "outlet1.stl" "outlet2.stl" "outlet3.stl" "outlet4.stl");
 // Identify a feature when angle between faces < includedAngle>
-includedAngle   170; // angle between the two neighbouring faces of the .stl files
+includedAngle   180; // angle between the two neighbouring faces of the .stl files
 extractionMethod     extractFromSurface;
 
 subsetFeatures
