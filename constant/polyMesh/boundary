@@ -15,13 +15,49 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-1
+6
 (
-    allBoundary
+    wall_aorta
     {
-        type            patch;
-        nFaces          19158;
-        startFace       449529;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          2161;
+        startFace       9755;
+    }
+    inlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          52;
+        startFace       11916;
+    }
+    outlet1
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          23;
+        startFace       11968;
+    }
+    outlet2
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          6;
+        startFace       11991;
+    }
+    outlet3
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          1;
+        startFace       11997;
+    }
+    outlet4
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          30;
+        startFace       11998;
     }
 )
 
